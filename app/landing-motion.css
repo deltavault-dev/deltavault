@@ -1,0 +1,113 @@
+/* DeltaVault: finite, section-specific capital choreography. Defaults are static. */
+.editorial-home .hero-title-line{display:block;color:var(--ivory)}
+.editorial-home .hero-title-line.accent{color:var(--lime)}
+.editorial-close h2>span{display:block}
+.editorial-home .reveal.seen,.editorial-home .editorial-hero-copy,.editorial-home .hero-instrument{animation:none!important}
+html[data-motion=on] .editorial-home .leverage-blocks i,html[data-motion=on] .editorial-home .equity-path{animation:none}
+.editorial-home .capital-summary>div,.editorial-home .editorial-heading,.editorial-home .risk-ledger>div{position:relative}
+.editorial-home .capital-summary>div:after{content:'';position:absolute;left:0;bottom:-1px;width:100%;height:1px;background:var(--lime);opacity:.45;transform:scaleX(1);transform-origin:left}
+.editorial-home .editorial-heading:before{content:'';position:absolute;top:-18px;left:0;width:46px;height:2px;background:var(--lime);transform-origin:left}
+.editorial-home .maintenance-cell:after{content:'';position:absolute;left:32px;right:32px;bottom:22px;height:1px;background:var(--ivory);transform-origin:center}
+.editorial-home .protocol-panel:focus-visible{border-color:var(--lime)}
+.editorial-home .vault-mini>i{transform-origin:center}
+.editorial-home .flow-node{transform-box:fill-box;transform-origin:center}
+.editorial-home .editorial-faq summary>span{transition:transform .2s ease-out}
+.editorial-home .editorial-faq details[open] summary>span{transform:rotate(45deg)}
+
+/* Hero: headline settles along three bearings, then the instrument draws its data. */
+html[data-motion=on] .motion-ready [data-motion-scene=hero].motion-entered .hero-title-line{animation:dv-type-bearing .8s cubic-bezier(.16,1,.3,1) backwards}
+html[data-motion=on] .motion-ready .hero-title-line:nth-child(2){animation-delay:.1s!important}
+html[data-motion=on] .motion-ready .hero-title-line:nth-child(3){animation-delay:.2s!important}
+html[data-motion=on] .motion-ready [data-motion-scene=hero].motion-entered .hero-instrument>.instrument-top{animation:dv-instrument-rule .65s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=hero].motion-entered .equity-path{stroke-dasharray:1;animation:chart-draw 1.25s .25s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=hero].motion-entered .instrument-controls{animation:dv-control-seat .5s .4s ease-out backwards}
+
+/* Summary: four slots index across the desk; values never count through fake data. */
+html[data-motion=on] .motion-ready [data-motion-scene=summary].motion-entered>div:after{animation:dv-rule-index .8s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=summary].motion-entered strong{display:block;animation:dv-slot-seat .6s ease-out backwards}
+
+/* Protocol: collateral expands, empty vault cells assemble, maintenance stays anchored. */
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .collateral-block{animation:dv-collateral-seat .65s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .leverage-blocks i{transform-origin:left;animation:dv-exposure-build .75s cubic-bezier(.16,1,.3,1) backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i{animation:dv-vault-seat .7s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .boundary-mini>i{transform-origin:bottom;animation:dv-boundary-calibrate .8s .2s ease-out backwards}
+html[data-motion=on] .motion-ready .protocol-panel:hover .panel-action,html[data-motion=on] .motion-ready .protocol-panel:focus-visible .panel-action{animation:dv-action-nudge .28s ease-out both}
+
+/* Mechanics: only children move; the sticky scroll container is never transformed. */
+html[data-motion=on] .motion-ready [data-motion-scene=mechanics].motion-entered .flow-route{stroke-dasharray:1;animation:dv-capital-route 1s ease-in-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=mechanics].motion-entered .settlement-route{animation-delay:.35s}
+html[data-motion=on] .motion-ready [data-motion-scene=mechanics].motion-entered .flow-node.emphasized{animation:dv-node-select .55s ease-out backwards}
+html[data-motion=on] .motion-ready .mechanics-step.active:before{transform-origin:top;animation:dv-step-signal .45s ease-out}
+
+/* Markets: rows arrive along the same horizontal axis as their quote columns. */
+html[data-motion=on] .motion-ready [data-motion-scene=markets].motion-entered tbody tr{animation:dv-market-row .65s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=markets].motion-entered .instrument-top{animation:dv-instrument-rule .6s ease-out backwards}
+
+/* Risk: variable equity arrives; the fixed maintenance rule closes into place. */
+html[data-motion=on] .motion-ready [data-motion-scene=risk].motion-entered .equity-cell strong{animation:dv-equity-read .75s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=risk].motion-entered .maintenance-cell:after{animation:dv-boundary-lock .85s .1s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=risk].motion-entered .state-cell{animation:dv-state-seat .65s .2s ease-out backwards}
+
+/* Closing statement: two lines converge; FAQ answers unfold on demand. */
+html[data-motion=on] .motion-ready [data-motion-scene=close].motion-entered h2>span:first-child{animation:dv-close-left .85s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=close].motion-entered h2>span:last-child{animation:dv-close-right .85s .1s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=close].motion-entered .hero-actions{animation:dv-control-seat .55s .25s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene=faq].motion-entered details{animation:dv-answer-seat .55s ease-out backwards}
+html[data-motion=on] .motion-ready .editorial-faq details[open]>p{animation:dv-answer-open .25s ease-out backwards}
+html[data-motion=on] .motion-ready [data-motion-scene].motion-entered .editorial-heading:before{animation:dv-rule-index .65s ease-out backwards}
+
+@keyframes dv-type-bearing{from{opacity:.3;transform:translateX(-24px) skewX(-3deg)}to{opacity:1;transform:none}}
+@keyframes dv-instrument-rule{from{opacity:.3;transform:translateX(14px)}to{opacity:1;transform:none}}
+@keyframes dv-control-seat{from{opacity:.4;transform:translateY(9px)}to{opacity:1;transform:none}}
+@keyframes dv-slot-seat{from{opacity:.4;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes dv-rule-index{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes dv-collateral-seat{from{transform:translateX(-16px)}to{transform:none}}
+@keyframes dv-exposure-build{from{opacity:.4;transform:translateX(-14px) scaleX(.18)}to{opacity:1;transform:none}}
+@keyframes dv-vault-seat{from{opacity:.2;transform:translateY(12px) scale(.75)}to{opacity:1;transform:none}}
+@keyframes dv-boundary-calibrate{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+@keyframes dv-step-signal{from{transform:scaleY(.2)}to{transform:scaleY(1)}}
+@keyframes dv-action-nudge{from{transform:translateX(-3px)}to{transform:none}}
+@keyframes dv-capital-route{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes dv-node-select{from{opacity:.5;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@keyframes dv-market-row{from{opacity:.3;transform:translateX(12px)}to{opacity:1;transform:none}}
+@keyframes dv-equity-read{from{opacity:.4;transform:translateY(-12px)}to{opacity:1;transform:none}}
+@keyframes dv-boundary-lock{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes dv-state-seat{from{opacity:.4;transform:translateX(10px)}to{opacity:1;transform:none}}
+@keyframes dv-close-left{from{opacity:.4;transform:translateX(-20px)}to{opacity:1;transform:none}}
+@keyframes dv-close-right{from{opacity:.4;transform:translateX(20px)}to{opacity:1;transform:none}}
+@keyframes dv-answer-seat{from{transform:translateX(10px)}to{transform:none}}
+@keyframes dv-answer-open{from{opacity:.5;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@media(max-width:680px){.editorial-home .maintenance-cell:after{left:19px;right:19px;bottom:15px}}
+@media(prefers-reduced-motion:reduce){.editorial-home *, .editorial-home *:before,.editorial-home *:after{animation:none!important;transition:none!important}}
+html[data-motion=on] .motion-ready [data-motion-scene=summary].motion-entered>div:nth-child(1) strong,html[data-motion=on] .motion-ready [data-motion-scene=summary].motion-entered>div:nth-child(1):after{animation-delay:0.00s}
+html[data-motion=on] .motion-ready [data-motion-scene=summary].motion-entered>div:nth-child(2) strong,html[data-motion=on] .motion-ready [data-motion-scene=summary].motion-entered>div:nth-child(2):after{animation-delay:0.09s}
+html[data-motion=on] .motion-ready [data-motion-scene=summary].motion-entered>div:nth-child(3) strong,html[data-motion=on] .motion-ready [data-motion-scene=summary].motion-entered>div:nth-child(3):after{animation-delay:0.18s}
+html[data-motion=on] .motion-ready [data-motion-scene=summary].motion-entered>div:nth-child(4) strong,html[data-motion=on] .motion-ready [data-motion-scene=summary].motion-entered>div:nth-child(4):after{animation-delay:0.27s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .leverage-blocks i:nth-child(1){animation-delay:0.12s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .leverage-blocks i:nth-child(2){animation-delay:0.21s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .leverage-blocks i:nth-child(3){animation-delay:0.30s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .leverage-blocks i:nth-child(4){animation-delay:0.39s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .leverage-blocks i:nth-child(5){animation-delay:0.48s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(1){animation-delay:0.000s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(2){animation-delay:0.035s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(3){animation-delay:0.070s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(4){animation-delay:0.105s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(5){animation-delay:0.065s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(6){animation-delay:0.100s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(7){animation-delay:0.135s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(8){animation-delay:0.170s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(9){animation-delay:0.130s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(10){animation-delay:0.165s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(11){animation-delay:0.200s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(12){animation-delay:0.235s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(13){animation-delay:0.195s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(14){animation-delay:0.230s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(15){animation-delay:0.265s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(16){animation-delay:0.300s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(17){animation-delay:0.260s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(18){animation-delay:0.295s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(19){animation-delay:0.330s}
+html[data-motion=on] .motion-ready [data-motion-scene=protocol].motion-entered .vault-mini>i:nth-child(20){animation-delay:0.365s}
+html[data-motion=on] .motion-ready [data-motion-scene=markets].motion-entered tbody tr:nth-child(1),html[data-motion=on] .motion-ready [data-motion-scene=faq].motion-entered details:nth-child(1){animation-delay:0.00s}
+html[data-motion=on] .motion-ready [data-motion-scene=markets].motion-entered tbody tr:nth-child(2),html[data-motion=on] .motion-ready [data-motion-scene=faq].motion-entered details:nth-child(2){animation-delay:0.12s}
+html[data-motion=on] .motion-ready [data-motion-scene=markets].motion-entered tbody tr:nth-child(3),html[data-motion=on] .motion-ready [data-motion-scene=faq].motion-entered details:nth-child(3){animation-delay:0.24s}

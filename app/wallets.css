@@ -1,0 +1,10 @@
+.wallet-list{display:flex;flex-direction:column;gap:8px;margin:20px 0;max-height:min(480px,52dvh);overflow-y:auto;overscroll-behavior:contain;padding:2px;scrollbar-width:thin}
+.wallet-list .wallet-option{margin:0;min-width:0}
+.wallet-list .wallet-option>a,.wallet-list .wallet-option>button{display:flex;align-items:center;gap:12px;width:100%;min-height:60px;padding:12px 15px;border:1px solid var(--line);border-radius:10px;background:var(--basalt);text-align:left;color:var(--ivory);transition:border-color .18s,background .18s}
+.wallet-list .wallet-option>a:hover,.wallet-list .wallet-option>button:not(:disabled):hover{border-color:var(--lime);background:#20271b}
+.wallet-list .wallet-option>a:focus-visible,.wallet-list .wallet-option>button:focus-visible{outline:2px solid var(--lime);outline-offset:0}
+.wallet-list .wallet-logo{width:34px;height:34px;object-fit:contain;flex:none;border-radius:7px}
+.wallet-list .wallet-option .wallet-name{margin:0;flex:1;font-size:16px;line-height:1.4;overflow-wrap:anywhere}
+.wallet-list .wallet-option .wallet-action{margin:0 0 0 auto;display:block;flex:none;font:12px var(--mono);color:var(--mineral)}
+.wallet-list .wallet-logo-unavailable{width:34px;flex:none;font-size:12px;line-height:1.2;margin:0;color:var(--mineral);text-align:center}
+@media(max-width:420px){.wallet-list .wallet-option>a,.wallet-list .wallet-option>button{padding:12px;gap:10px}.wallet-list .wallet-option .wallet-name{font-size:14px}}
