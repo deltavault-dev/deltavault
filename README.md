@@ -1,4 +1,8 @@
-<p align="center"><a href="https://deltavault-a1.raisatunjangpacok.chatgpt.site"><img src="docs/assets/deltavault-banner.svg" alt="DeltaVault — Open markets. Measured exposure.
+<p align="center"><a href="https://deltavault-a1.raisatunjangpacok.chatgpt.site"><img src="docs/assets/deltavault-banner.svg" alt="DeltaVault — Open markets. Measured exposure." width="100%"></a></p>
+
+# DeltaVault
+
+**Open markets. Measured exposure.**
 
 [![TypeScript](https://github.com/deltavault-dev/deltavault/actions/workflows/types.yml/badge.svg)](https://github.com/deltavault-dev/deltavault/actions/workflows/types.yml)
 [![Market data](https://github.com/deltavault-dev/deltavault/actions/workflows/markets.yml/badge.svg)](https://github.com/deltavault-dev/deltavault/actions/workflows/markets.yml)
@@ -6,11 +10,7 @@
 [![Wallet list](https://github.com/deltavault-dev/deltavault/actions/workflows/wallets.yml/badge.svg)](https://github.com/deltavault-dev/deltavault/actions/workflows/wallets.yml)
 [![API resilience](https://github.com/deltavault-dev/deltavault/actions/workflows/api.yml/badge.svg)](https://github.com/deltavault-dev/deltavault/actions/workflows/api.yml)
 [![Repository integrity](https://github.com/deltavault-dev/deltavault/actions/workflows/integrity.yml/badge.svg)](https://github.com/deltavault-dev/deltavault/actions/workflows/integrity.yml)
-[![Production build](https://github.com/deltavault-dev/deltavault/actions/workflows/build.yml/badge.svg)](https://github.com/deltavault-dev/deltavault/actions/workflows/build.yml)" width="100%"></a></p>
-
-# DeltaVault
-
-**Open markets. Measured exposure.**
+[![Production build](https://github.com/deltavault-dev/deltavault/actions/workflows/build.yml/badge.svg)](https://github.com/deltavault-dev/deltavault/actions/workflows/build.yml)
 
 A market workspace for inspecting leveraged exposure, market-specific liquidity and risk, with real CoinGecko prices and 24-hour price history.
 
