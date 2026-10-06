@@ -1,0 +1,1045 @@
+[
+  {
+    "id": "overview",
+    "title": "DeltaVault",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "Onchain Markets. Structured Risk. Open Access."
+      },
+      {
+        "type": "paragraph",
+        "text": "DeltaVault is an onchain financial protocol for leveraged market exposure, liquidity provision, and programmable risk management."
+      },
+      {
+        "type": "paragraph",
+        "text": "The protocol creates a unified environment where users can take long and short positions, allocate capital to market-specific vaults, and interact with financial markets through transparent smart-contract infrastructure."
+      },
+      {
+        "type": "paragraph",
+        "text": "DeltaVault is built around a simple principle:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Market access should be programmable, transparent, and verifiable."
+      },
+      {
+        "type": "paragraph",
+        "text": "Instead of relying on centralized trading infrastructure to manage positions, liquidity, and settlement, DeltaVault brings these functions into an onchain system governed by published rules and observable blockchain activity."
+      }
+    ]
+  },
+  {
+    "id": "paper-the-protocol",
+    "title": "The Protocol",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault combines four core components:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Markets"
+      },
+      {
+        "type": "paragraph",
+        "text": "Individual markets provide exposure to supported assets and reference prices."
+      },
+      {
+        "type": "paragraph",
+        "text": "Vaults"
+      },
+      {
+        "type": "paragraph",
+        "text": "Market liquidity is organized into distinct vaults, allowing capital to be associated with defined trading environments and risk profiles."
+      },
+      {
+        "type": "paragraph",
+        "text": "Positions"
+      },
+      {
+        "type": "paragraph",
+        "text": "Users can open leveraged long or short positions using collateral held through the protocol."
+      },
+      {
+        "type": "paragraph",
+        "text": "Risk Engine"
+      },
+      {
+        "type": "paragraph",
+        "text": "Automated parameters govern collateral requirements, leverage, exposure, utilization, and liquidation conditions."
+      },
+      {
+        "type": "paragraph",
+        "text": "Together, these components create a financial system in which liquidity and trading activity can interact without requiring a traditional centralized matching engine."
+      }
+    ]
+  },
+  {
+    "id": "paper-trading",
+    "title": "Trading",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault allows users to obtain leveraged directional exposure without requiring ownership of the underlying market asset."
+      },
+      {
+        "type": "paragraph",
+        "text": "A trader selects a supported market, supplies collateral, chooses a direction, and establishes a position according to the market's available parameters."
+      },
+      {
+        "type": "paragraph",
+        "text": "A long position gains exposure to upward movement in the reference price."
+      },
+      {
+        "type": "paragraph",
+        "text": "A short position gains exposure to downward movement."
+      },
+      {
+        "type": "paragraph",
+        "text": "The protocol continuously evaluates the position against its collateral requirements and current reference price."
+      },
+      {
+        "type": "paragraph",
+        "text": "Profit and loss are determined by the movement of the underlying reference price between the relevant position states."
+      },
+      {
+        "type": "paragraph",
+        "text": "All position accounting follows the rules encoded into the protocol."
+      }
+    ]
+  },
+  {
+    "id": "paper-leverage",
+    "title": "Leverage",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Leverage allows users to control market exposure greater than the amount of collateral committed to a position."
+      },
+      {
+        "type": "paragraph",
+        "text": "Because leverage increases exposure, it also increases the rate at which both gains and losses can occur."
+      },
+      {
+        "type": "paragraph",
+        "text": "DeltaVault therefore assigns leverage limits to individual markets rather than applying a universal setting across the entire system."
+      },
+      {
+        "type": "paragraph",
+        "text": "Market parameters can reflect factors such as:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Market volatility",
+          "Available liquidity",
+          "Vault utilization",
+          "Maximum supported exposure",
+          "Oracle characteristics",
+          "Existing open interest"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Leverage is consequently treated as a risk parameter rather than simply a trading feature."
+      }
+    ]
+  },
+  {
+    "id": "paper-deltavault-vaults",
+    "title": "DeltaVault Vaults",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Liquidity within DeltaVault is organized into market-specific vaults."
+      },
+      {
+        "type": "paragraph",
+        "text": "Each vault represents a defined capital environment supporting activity in its corresponding market."
+      },
+      {
+        "type": "paragraph",
+        "text": "Liquidity providers deposit supported assets into a vault and receive the economic benefits and risks associated with that vault's performance."
+      },
+      {
+        "type": "paragraph",
+        "text": "A vault's results can be influenced by:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Trader profit and loss",
+          "Trading activity",
+          "Protocol fees",
+          "Utilization",
+          "Market volatility",
+          "Risk parameters",
+          "Incentive programs"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Separating markets into individual environments gives users greater visibility into where their liquidity is being deployed."
+      },
+      {
+        "type": "paragraph",
+        "text": "Rather than evaluating one global liquidity pool, participants can examine each market environment independently."
+      }
+    ]
+  },
+  {
+    "id": "paper-liquidity-provision",
+    "title": "Liquidity Provision",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Liquidity providers are an essential part of the DeltaVault ecosystem."
+      },
+      {
+        "type": "paragraph",
+        "text": "By supplying capital to a vault, liquidity providers increase the amount of market activity that the protocol can support."
+      },
+      {
+        "type": "paragraph",
+        "text": "In return, vault participants can receive a share of the economic activity generated within their respective liquidity environment, subject to the applicable vault rules and risks."
+      },
+      {
+        "type": "paragraph",
+        "text": "Each vault can expose information such as:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Total Liquidity"
+      },
+      {
+        "type": "paragraph",
+        "text": "The capital currently committed to the vault."
+      },
+      {
+        "type": "paragraph",
+        "text": "Available Liquidity"
+      },
+      {
+        "type": "paragraph",
+        "text": "Capital that remains available for additional market exposure."
+      },
+      {
+        "type": "paragraph",
+        "text": "Utilization"
+      },
+      {
+        "type": "paragraph",
+        "text": "The proportion of available liquidity currently being used by protocol activity."
+      },
+      {
+        "type": "paragraph",
+        "text": "Open Exposure"
+      },
+      {
+        "type": "paragraph",
+        "text": "The aggregate outstanding exposure associated with the market."
+      },
+      {
+        "type": "paragraph",
+        "text": "Historical Performance"
+      },
+      {
+        "type": "paragraph",
+        "text": "Past vault performance and relevant protocol statistics."
+      },
+      {
+        "type": "paragraph",
+        "text": "Liquidity provision is not risk-free. A vault can experience losses depending on market conditions and trader outcomes."
+      }
+    ]
+  },
+  {
+    "id": "paper-market-capacity",
+    "title": "Market Capacity",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault treats liquidity as a finite resource."
+      },
+      {
+        "type": "paragraph",
+        "text": "Every market has a defined capacity based on its available capital and risk parameters."
+      },
+      {
+        "type": "paragraph",
+        "text": "As utilization increases, the protocol can modify the conditions under which additional exposure may be created."
+      },
+      {
+        "type": "paragraph",
+        "text": "Depending on market configuration, this can include:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Lower leverage limits",
+          "Greater collateral requirements",
+          "Reduced position capacity",
+          "Exposure restrictions",
+          "Temporary limits on new positions"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "This creates a relationship between available liquidity and the amount of risk the market can absorb."
+      }
+    ]
+  },
+  {
+    "id": "paper-risk-management",
+    "title": "Risk Management",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Risk management is integrated directly into the protocol."
+      },
+      {
+        "type": "paragraph",
+        "text": "DeltaVault uses market-specific parameters to manage the relationship between collateral, exposure, liquidity, and liquidation risk."
+      },
+      {
+        "type": "paragraph",
+        "text": "These parameters may include:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Initial Margin"
+      },
+      {
+        "type": "paragraph",
+        "text": "The collateral required to establish a position."
+      },
+      {
+        "type": "paragraph",
+        "text": "Maintenance Margin"
+      },
+      {
+        "type": "paragraph",
+        "text": "The minimum collateral level required to keep a position open."
+      },
+      {
+        "type": "paragraph",
+        "text": "Maximum Leverage"
+      },
+      {
+        "type": "paragraph",
+        "text": "The maximum exposure available for a particular market."
+      },
+      {
+        "type": "paragraph",
+        "text": "Position Limits"
+      },
+      {
+        "type": "paragraph",
+        "text": "Restrictions on the maximum size of individual positions."
+      },
+      {
+        "type": "paragraph",
+        "text": "Market Exposure Limits"
+      },
+      {
+        "type": "paragraph",
+        "text": "Controls on total exposure relative to available liquidity."
+      },
+      {
+        "type": "paragraph",
+        "text": "Utilization Limits"
+      },
+      {
+        "type": "paragraph",
+        "text": "Controls designed to prevent excessive concentration of liquidity."
+      },
+      {
+        "type": "paragraph",
+        "text": "Liquidation Thresholds"
+      },
+      {
+        "type": "paragraph",
+        "text": "Conditions under which a position becomes eligible for liquidation."
+      },
+      {
+        "type": "paragraph",
+        "text": "The parameters of each market can be disclosed publicly and adjusted according to the governance and administration framework established by the protocol."
+      }
+    ]
+  },
+  {
+    "id": "paper-liquidations",
+    "title": "Liquidations",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "A leveraged position must maintain sufficient collateral relative to its exposure."
+      },
+      {
+        "type": "paragraph",
+        "text": "When a position reaches its defined liquidation threshold, DeltaVault can begin the liquidation process."
+      },
+      {
+        "type": "paragraph",
+        "text": "The purpose of liquidation is to reduce positions whose collateral is no longer sufficient to support their outstanding exposure."
+      },
+      {
+        "type": "paragraph",
+        "text": "Liquidation rules can vary by market and may incorporate:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Maintenance margin",
+          "Price movement",
+          "Market liquidity",
+          "Position size",
+          "Current utilization",
+          "Maximum permitted exposure"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Liquidation is an inherent part of leveraged markets and can result in the loss of a trader's posted collateral."
+      }
+    ]
+  },
+  {
+    "id": "paper-price-infrastructure",
+    "title": "Price Infrastructure",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault separates market pricing from liquidity management."
+      },
+      {
+        "type": "paragraph",
+        "text": "Reference prices are obtained through external oracle infrastructure and used by the protocol to evaluate positions and settlement conditions."
+      },
+      {
+        "type": "paragraph",
+        "text": "The protocol can incorporate safeguards such as:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Stale-price protection",
+          "Price deviation checks",
+          "Multi-source validation",
+          "Market circuit breakers",
+          "Oracle heartbeat verification",
+          "Emergency market controls"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The objective is to prevent abnormal or outdated pricing information from producing unintended protocol behavior."
+      },
+      {
+        "type": "paragraph",
+        "text": "Oracle availability and reliability remain important risks for any financial protocol that depends on external price information."
+      }
+    ]
+  },
+  {
+    "id": "paper-settlement",
+    "title": "Settlement",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Position settlement is performed according to the smart-contract rules governing the relevant market."
+      },
+      {
+        "type": "paragraph",
+        "text": "When a position is closed, its realized result is calculated using the applicable reference prices and protocol parameters."
+      },
+      {
+        "type": "paragraph",
+        "text": "Settlement can account for:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Realized profit or loss",
+          "Trading fees",
+          "Funding or market-specific charges where applicable",
+          "Liquidation costs",
+          "Other protocol-defined adjustments"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The resulting balance is reflected according to the protocol's settlement mechanism."
+      }
+    ]
+  },
+  {
+    "id": "paper-trading-fees",
+    "title": "Trading Fees",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault can generate protocol revenue from activity occurring throughout the system."
+      },
+      {
+        "type": "paragraph",
+        "text": "Potential sources include:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Trading Fees"
+      },
+      {
+        "type": "paragraph",
+        "text": "Fees associated with opening, modifying, or closing positions."
+      },
+      {
+        "type": "paragraph",
+        "text": "Liquidation Fees"
+      },
+      {
+        "type": "paragraph",
+        "text": "Fees associated with the processing of liquidated positions."
+      },
+      {
+        "type": "paragraph",
+        "text": "Vault Fees"
+      },
+      {
+        "type": "paragraph",
+        "text": "Fees associated with liquidity management or vault performance where applicable."
+      },
+      {
+        "type": "paragraph",
+        "text": "Market Fees"
+      },
+      {
+        "type": "paragraph",
+        "text": "Market-specific charges defined by the relevant configuration."
+      },
+      {
+        "type": "paragraph",
+        "text": "All applicable fees should be disclosed through the protocol interface and governed by the parameters established for each market."
+      }
+    ]
+  },
+  {
+    "id": "paper-the-deltavault-token",
+    "title": "The DeltaVault Token",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "The DeltaVault token is the native economic asset of the DeltaVault ecosystem."
+      },
+      {
+        "type": "paragraph",
+        "text": "Its purpose is to connect protocol participation, ecosystem incentives, governance, and the broader economic activity surrounding the platform."
+      },
+      {
+        "type": "paragraph",
+        "text": "Token utility can include:"
+      },
+      {
+        "type": "heading",
+        "text": "Governance"
+      },
+      {
+        "type": "paragraph",
+        "text": "Eligible holders may participate in governance over supported protocol decisions, including market parameters, ecosystem policies, treasury allocation, and other governance-controlled functions."
+      },
+      {
+        "type": "heading",
+        "text": "Ecosystem Incentives"
+      },
+      {
+        "type": "paragraph",
+        "text": "The token can be used to reward liquidity provision, market participation, ecosystem growth, and other activities that contribute to network usage."
+      },
+      {
+        "type": "heading",
+        "text": "Protocol Participation"
+      },
+      {
+        "type": "paragraph",
+        "text": "Certain ecosystem functions may incorporate the token as part of participation or access mechanisms."
+      },
+      {
+        "type": "heading",
+        "text": "Treasury Alignment"
+      },
+      {
+        "type": "paragraph",
+        "text": "The token can form part of the protocol's wider economic framework by connecting community participation with treasury and ecosystem activity."
+      },
+      {
+        "type": "paragraph",
+        "text": "Actual functionality is determined by the smart contracts and governance mechanisms deployed by DeltaVault."
+      }
+    ]
+  },
+  {
+    "id": "paper-token-economy",
+    "title": "Token Economy",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "The DeltaVault economy is designed around transparent supply and distribution."
+      },
+      {
+        "type": "paragraph",
+        "text": "Token allocations, circulating supply, treasury balances, vesting arrangements, and emissions should be publicly disclosed."
+      },
+      {
+        "type": "paragraph",
+        "text": "Where emissions are used, their purpose is to support measurable ecosystem activity such as:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Liquidity growth",
+          "Market depth",
+          "User participation",
+          "Ecosystem incentives",
+          "Strategic integrations"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Token emissions are not presented as guaranteed returns and do not represent a promise of appreciation."
+      }
+    ]
+  },
+  {
+    "id": "paper-treasury",
+    "title": "Treasury",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "The DeltaVault treasury provides a programmable reserve for the ecosystem."
+      },
+      {
+        "type": "paragraph",
+        "text": "Treasury resources may be allocated toward:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Liquidity",
+          "Ecosystem incentives",
+          "Security infrastructure",
+          "Protocol operations",
+          "Integrations",
+          "Market expansion",
+          "Community initiatives"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Treasury activity can be made publicly observable through onchain transactions and governance records."
+      },
+      {
+        "type": "paragraph",
+        "text": "Where governance controls treasury decisions, proposals and resulting executions can be independently verified."
+      }
+    ]
+  },
+  {
+    "id": "paper-governance",
+    "title": "Governance",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault is designed to evolve through transparent protocol governance."
+      },
+      {
+        "type": "paragraph",
+        "text": "Governance may cover areas such as:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Market activation",
+          "Market parameters",
+          "Risk controls",
+          "Fee configuration",
+          "Treasury allocation",
+          "Incentive programs",
+          "Supported assets",
+          "Protocol-level upgrades"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Governance authority is limited to the functions actually implemented by the protocol's smart contracts."
+      },
+      {
+        "type": "paragraph",
+        "text": "Not every protocol parameter necessarily needs to be governed directly, particularly parameters requiring rapid response to market conditions or security events."
+      },
+      {
+        "type": "paragraph",
+        "text": "Administrative privileges can be constrained through role separation, multisignature controls, timelocks, or other security mechanisms where appropriate."
+      }
+    ]
+  },
+  {
+    "id": "paper-market-expansion",
+    "title": "Market Expansion",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault can support a growing collection of onchain markets."
+      },
+      {
+        "type": "paragraph",
+        "text": "A market can be introduced when the protocol has suitable infrastructure for its reference price, liquidity requirements, risk parameters, and settlement behavior."
+      },
+      {
+        "type": "paragraph",
+        "text": "Each market can define its own configuration, including:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Reference asset",
+          "Oracle source",
+          "Maximum leverage",
+          "Initial margin",
+          "Maintenance margin",
+          "Position limits",
+          "Exposure limits",
+          "Vault configuration",
+          "Fee structure"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "This allows the protocol to support different market environments without forcing every asset into identical risk parameters."
+      }
+    ]
+  },
+  {
+    "id": "paper-composable-infrastructure",
+    "title": "Composable Infrastructure",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault is designed as infrastructure rather than a closed trading application."
+      },
+      {
+        "type": "paragraph",
+        "text": "Its onchain components can potentially be integrated into other decentralized applications."
+      },
+      {
+        "type": "paragraph",
+        "text": "Third-party applications may build interfaces or services around DeltaVault markets, positions, liquidity, analytics, and other publicly accessible protocol data."
+      },
+      {
+        "type": "paragraph",
+        "text": "Potential integrations include:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Portfolio applications",
+          "Trading interfaces",
+          "Automated strategies",
+          "Analytics platforms",
+          "Risk-management tools",
+          "Liquidity aggregators",
+          "Onchain financial applications",
+          "Agent-based financial software"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The objective is to create infrastructure that can exist beyond a single interface."
+      }
+    ]
+  },
+  {
+    "id": "paper-transparency",
+    "title": "Transparency",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Every core element of an onchain financial system should be independently observable."
+      },
+      {
+        "type": "paragraph",
+        "text": "DeltaVault is designed around public verification of:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Smart contracts",
+          "Market parameters",
+          "Vault balances",
+          "Open exposure",
+          "Protocol fees",
+          "Treasury activity",
+          "Token supply",
+          "Governance actions",
+          "Settlement activity"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The protocol's objective is to replace opaque internal accounting with blockchain-verifiable state wherever technically practical."
+      },
+      {
+        "type": "paragraph",
+        "text": "Users can therefore inspect the underlying system rather than relying exclusively on an operator's internal representation of the market."
+      }
+    ]
+  },
+  {
+    "id": "paper-security",
+    "title": "Security",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Financial smart contracts operate under adversarial conditions and require continuous security practices."
+      },
+      {
+        "type": "paragraph",
+        "text": "DeltaVault can incorporate multiple layers of protection, including:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Smart-contract audits",
+          "Restricted administrative permissions",
+          "Multisignature controls",
+          "Timelocked upgrades",
+          "Oracle validation",
+          "Exposure limits",
+          "Vault isolation",
+          "Automated monitoring",
+          "Emergency controls"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Audits and security mechanisms reduce specific classes of implementation and operational risk but cannot eliminate all possible failures."
+      },
+      {
+        "type": "paragraph",
+        "text": "Users should independently evaluate contract risk, oracle risk, liquidity risk, market risk, governance risk, and operational risk before interacting with the protocol."
+      }
+    ]
+  },
+  {
+    "id": "paper-self-custody",
+    "title": "Self-Custody",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault is designed around non-custodial interaction."
+      },
+      {
+        "type": "paragraph",
+        "text": "Users connect their compatible wallets and interact with the protocol through smart contracts."
+      },
+      {
+        "type": "paragraph",
+        "text": "Assets associated with protocol activity are handled according to the rules encoded within the deployed contracts."
+      },
+      {
+        "type": "paragraph",
+        "text": "The protocol does not represent that blockchain infrastructure eliminates financial risk."
+      },
+      {
+        "type": "paragraph",
+        "text": "Self-custody means users remain responsible for their wallets, private keys, transaction approvals, and interaction with smart contracts."
+      }
+    ]
+  },
+  {
+    "id": "paper-built-on-robinhood-chain",
+    "title": "Built on Robinhood Chain",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault is designed to operate on Robinhood Chain, using the network's Ethereum-compatible smart-contract environment."
+      },
+      {
+        "type": "paragraph",
+        "text": "Robinhood Chain is documented as a permissionless, EVM-compatible Layer 2 built on Arbitrum technology and designed for onchain financial infrastructure. Its developer documentation states that standard Solidity and Vyper contracts can deploy using conventional Ethereum tooling."
+      },
+      {
+        "type": "paragraph",
+        "text": "DeltaVault is an independent third-party protocol and is not a product, subsidiary, endorsement, partnership, or representation of Robinhood."
+      }
+    ]
+  },
+  {
+    "id": "paper-open-financial-infrastructure",
+    "title": "Open Financial Infrastructure",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "The traditional financial system is composed of separate institutions handling custody, execution, settlement, liquidity, and risk."
+      },
+      {
+        "type": "paragraph",
+        "text": "Blockchain infrastructure makes it possible to express many of these functions as programmable systems."
+      },
+      {
+        "type": "paragraph",
+        "text": "DeltaVault approaches the market through this lens."
+      },
+      {
+        "type": "paragraph",
+        "text": "Liquidity can be allocated through vaults."
+      },
+      {
+        "type": "paragraph",
+        "text": "Exposure can be represented through positions."
+      },
+      {
+        "type": "paragraph",
+        "text": "Risk parameters can be encoded into contracts."
+      },
+      {
+        "type": "paragraph",
+        "text": "Settlement can be performed onchain."
+      },
+      {
+        "type": "paragraph",
+        "text": "Market information can be made publicly observable."
+      },
+      {
+        "type": "paragraph",
+        "text": "Governance can be represented through transparent onchain processes."
+      },
+      {
+        "type": "paragraph",
+        "text": "The result is a financial environment where the underlying mechanics are designed to be inspectable rather than hidden behind a centralized backend."
+      }
+    ]
+  },
+  {
+    "id": "paper-the-deltavault-vision",
+    "title": "The DeltaVault Vision",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault is built for an emerging financial environment in which market infrastructure becomes programmable."
+      },
+      {
+        "type": "paragraph",
+        "text": "The protocol brings together leveraged exposure, market liquidity, automated risk controls, transparent settlement, and an ecosystem token into a single onchain framework."
+      },
+      {
+        "type": "paragraph",
+        "text": "Its focus is not simply on providing another trading interface."
+      },
+      {
+        "type": "paragraph",
+        "text": "The objective is to create reusable market infrastructure that can support an expanding range of financial applications."
+      },
+      {
+        "type": "paragraph",
+        "text": "Markets become programmable."
+      },
+      {
+        "type": "paragraph",
+        "text": "Liquidity becomes modular."
+      },
+      {
+        "type": "paragraph",
+        "text": "Risk becomes explicit."
+      },
+      {
+        "type": "paragraph",
+        "text": "Settlement becomes transparent."
+      },
+      {
+        "type": "paragraph",
+        "text": "Participation becomes onchain."
+      },
+      {
+        "type": "paragraph",
+        "text": "DeltaVault is designed to provide the infrastructure for that transition."
+      }
+    ]
+  },
+  {
+    "id": "paper-risk-disclosure",
+    "title": "Risk Disclosure",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Participation in DeltaVault involves significant risk."
+      },
+      {
+        "type": "paragraph",
+        "text": "Leveraged positions can lose some or all of their posted collateral."
+      },
+      {
+        "type": "paragraph",
+        "text": "Market prices can move rapidly and unexpectedly."
+      },
+      {
+        "type": "paragraph",
+        "text": "Liquidation mechanisms may close positions during adverse market conditions."
+      },
+      {
+        "type": "paragraph",
+        "text": "Liquidity providers may experience losses arising from trader outcomes, market volatility, utilization, oracle failures, smart-contract vulnerabilities, and other protocol risks."
+      },
+      {
+        "type": "paragraph",
+        "text": "The DeltaVault token may experience substantial price volatility and may become illiquid."
+      },
+      {
+        "type": "paragraph",
+        "text": "Protocol governance, upgrades, market parameters, external dependencies, regulatory requirements, and technical conditions may change over time."
+      },
+      {
+        "type": "paragraph",
+        "text": "Nothing contained in this document constitutes a guarantee of profit, a guarantee of liquidity, a promise of future token value, or a representation that participation is suitable for any particular person."
+      },
+      {
+        "type": "paragraph",
+        "text": "Users should conduct their own independent assessment of the protocol and understand the applicable risks, restrictions, and legal requirements before interacting with DeltaVault."
+      }
+    ]
+  },
+  {
+    "id": "paper-disclaimer",
+    "title": "Disclaimer",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "DeltaVault is software infrastructure intended for onchain financial applications."
+      },
+      {
+        "type": "paragraph",
+        "text": "Nothing presented on this website or within this document constitutes investment advice, financial advice, legal advice, tax advice, or a solicitation to purchase or sell any asset."
+      },
+      {
+        "type": "paragraph",
+        "text": "Access to specific markets, features, and services may be restricted depending on applicable laws, regulations, geographic location, wallet configuration, interface availability, or protocol parameters."
+      },
+      {
+        "type": "paragraph",
+        "text": "Users are solely responsible for determining whether and how they may lawfully interact with DeltaVault."
+      },
+      {
+        "type": "paragraph",
+        "text": "DeltaVault does not guarantee uninterrupted availability, accuracy of external market data, profitability, or preservation of capital."
+      },
+      {
+        "type": "paragraph",
+        "text": "Use of DeltaVault involves smart-contract, market, liquidity, oracle, governance, and technological risks."
+      },
+      {
+        "type": "paragraph",
+        "text": "By interacting with the protocol, users acknowledge that blockchain transactions are generally irreversible and that they are responsible for their own transactions, wallet security, and assessment of protocol risk."
+      }
+    ]
+  }
+]
